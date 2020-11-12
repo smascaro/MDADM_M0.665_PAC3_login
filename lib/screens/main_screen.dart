@@ -18,16 +18,33 @@ class MainScreen extends StatelessWidget {
       body: Padding(
         padding: containerPadding(),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            buildHeader(),
-            verticalSeparator(),
-            buildSubheader("With email:"),
-            buildContentItem(args.emailAddress),
-            verticalSeparator(),
-            buildSubheader("With password:"),
-            buildContentItem(args.password),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                buildHeader(),
+                verticalSeparator(),
+                buildSubheader("With email:"),
+                buildContentItem(args.emailAddress),
+                verticalSeparator(),
+                buildSubheader("With password:"),
+                buildContentItem(args.password),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                OutlineButton(
+                  child: Text("BACK"),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                )
+              ],
+            )
           ],
         ),
       ),
