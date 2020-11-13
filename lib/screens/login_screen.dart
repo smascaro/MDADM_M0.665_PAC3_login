@@ -60,7 +60,7 @@ class _LoginScreenState extends State<LoginScreen> {
             border: OutlineInputBorder(),
             hintText: "Enter your password",
             labelText: "Password",
-            helperText: "Make sure no one else is looking at the screen",
+            helperText: "Make sure nobody is looking",
             suffixIcon: IconButton(
               icon: Icon(_passwordVisible ? Icons.visibility_off : Icons.visibility),
               onPressed: _togglePasswordVisibility,
